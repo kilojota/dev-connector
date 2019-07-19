@@ -1,0 +1,6 @@
+{
+    "mongoURI": "mongodb+srv://kilo:kilo123@devconnector-h4o28.mongodb.net/test?retryWrites=true&w=majority",
+    "jwtSecret": "fabricioyacquesthebestnodoubt",
+    "githubClientId": "01283d2c7ede49fd772c",
+    "githubSecret": "35ab672ba6afcce81a9deadd479769624052a9a3"
+}
