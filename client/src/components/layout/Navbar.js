@@ -7,13 +7,19 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
     const authLinks = ( // hide-sm classname is for small screens, it will hide the element
         <ul>
             <li>
+                <Link to='/profiles'>Developers</Link>
+            </li>
+            <li>
+                <Link to='/posts'>Posts</Link>
+            </li>
+            <li>
                 <Link to='/dashboard'>
                     <i className='fas fa-user' />
                     <span className='hide-sm'> Dashboard</span>
                 </Link>
             </li>
             <li>
-                <a onClick={logout} href='#!'>
+                <a onClick={logout /*Removed href="#!"*/}>
                     <i className='fas fa-sign-out-alt' />
                     <span className='hide-sm'> Logout</span>
                 </a>
@@ -23,7 +29,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
     const guestLinks = (
         <ul>
             <li>
-                <a href='#!'>Developers</a>
+                <Link to='/profiles'>Developers</Link>
             </li>
             <li>
                 <Link to='/register'>Register</Link>
@@ -39,9 +45,13 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
                 <Link to='/'>
                     <i className='fas fa-code' /> DevConnector
                 </Link>
+
             </h1>
-            {!loading && ( // If not loading is false, which means we are passed the initial state, then show either authLinks or guestLinks depending on athentication state.
-                <Fragment>{isAuthenticated ? authLinks : guestLinks}</Fragment>
+            {!loading && (
+                <Fragment>
+                    {isAuthenticated ? authLinks : guestLinks // If not loading is false, which means we are passed the initial state, then show either authLinks or guestLinks depending on athentication state.
+                    }
+                </Fragment>
             )}
         </nav>
     );
